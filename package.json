@@ -12,7 +12,6 @@
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-anchor-links": "^1.1.1",
-    "gatsby-plugin-graphql-codegen": "^2.7.0",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.1",
@@ -25,7 +24,10 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "styled-components": "^5.0.1",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "typeface-merriweather": "0.0.72",
+    "typeface-open-sans": "0.0.75",
+    "typeface-quicksand": "^1.1.4"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.26.0",
