@@ -2069,7 +2069,6 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___background_color' |
   'pluginCreator___pluginOptions___theme_color' |
   'pluginCreator___pluginOptions___display' |
-  'pluginCreator___pluginOptions___icon' |
   'pluginCreator___pluginOptions___fileName' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
@@ -2264,7 +2263,6 @@ export type SitePluginFieldsEnum =
   'pluginOptions___background_color' |
   'pluginOptions___theme_color' |
   'pluginOptions___display' |
-  'pluginOptions___icon' |
   'pluginOptions___fileName' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
@@ -2386,7 +2384,6 @@ export type SitePluginPluginOptions = {
   background_color?: Maybe<Scalars['String']>;
   theme_color?: Maybe<Scalars['String']>;
   display?: Maybe<Scalars['String']>;
-  icon?: Maybe<Scalars['String']>;
   fileName?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
@@ -2399,7 +2396,6 @@ export type SitePluginPluginOptionsFilterInput = {
   background_color?: Maybe<StringQueryOperatorInput>;
   theme_color?: Maybe<StringQueryOperatorInput>;
   display?: Maybe<StringQueryOperatorInput>;
-  icon?: Maybe<StringQueryOperatorInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
@@ -2439,20 +2435,15 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type ImageLoaderQueryVariables = {};
-
-
-export type ImageLoaderQuery = { placeholderImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> };
-
-export type SiteTitleQueryQueryVariables = {};
-
-
-export type SiteTitleQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
 export type Unnamed_1_QueryVariables = {};
 
 
 export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
+
+export type Unnamed_2_QueryVariables = {};
+
+
+export type Unnamed_2_Query = { file?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
