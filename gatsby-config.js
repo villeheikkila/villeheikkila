@@ -28,6 +28,12 @@ module.exports = {
             },
         },
         `gatsby-plugin-typescript`,
+        {
+            resolve: `gatsby-plugin-graphql-codegen`,
+            options: {
+                fileName: `./generated/graphql-types.ts`,
+            },
+        },
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-anchor-links`,
         // this (optional) plugin enables Progressive Web App + Offline functionality

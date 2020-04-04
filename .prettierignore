@@ -8,3 +8,4 @@ yarn.lockLICENSE
 .gitignore
 LICENSE
 yarn.lock
+graphql-types
