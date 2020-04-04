@@ -16,7 +16,9 @@ const Header: React.FC<GridAreaProps | LayoutProps> = ({ ...rest }) => (
     <Container {...rest}>
         <Box gridArea="left">
             <NavigationLink tag={Link} display="flex" to="/">
-                <Canon color="snow">Ville</Canon>
+                <Canon color="snow" paddingRight="10px">
+                    Ville
+                </Canon>
 
                 <CanonOnHover color="snow">Heikkilä</CanonOnHover>
             </NavigationLink>
