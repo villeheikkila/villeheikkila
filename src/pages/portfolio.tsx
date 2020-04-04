@@ -2,11 +2,11 @@ import React from 'react';
 import Page from '../components/Page';
 import SEO from '../components/seo';
 
-const Contact = () => (
+const Portfolio = () => (
     <Page backgroundColor="snow">
-        <SEO title="Contact" />
-        <h1>Contact Information</h1>
+        <SEO title="Portfolio" />
+        <h1>Portfolio</h1>
     </Page>
 );
 
-export default Contact;
+export default Portfolio;
