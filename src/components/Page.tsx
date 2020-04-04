@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { grid, GridProps } from 'styled-system';
 
-const Page: React.FC = ({ children }) => (
-    <Container>
+const Page: React.FC<GridProps> = ({ children, ...rest }) => (
+    <Container {...rest}>
         <Header />
         {children}
         <Footer />
@@ -12,7 +13,9 @@ const Page: React.FC = ({ children }) => (
 const Header = () => <div />;
 const Footer = () => <div />;
 
-const Container = styled.div`
+const Container = styled.div<GridProps>`
+    ${grid}
+    display: grid;
     width: 100vw;
     height: 100vh;
 `;

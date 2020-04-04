@@ -4,6 +4,7 @@ import Page from '../components/Page';
 import SEO from '../components/seo';
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
+import { grid, gridArea, GridAreaProps } from 'styled-system';
 
 const query = graphql`
     query {
@@ -21,20 +22,36 @@ const Index = () => {
     const data = useStaticQuery(query);
 
     return (
-        <Page>
+        <Page
+            gridTemplateRows="100px 200px 1fr"
+            gridTemplateColumns="1fr 1fr 1fr"
+            gridTemplateAreas="'. header .' '. avatar .' '. . .'"
+        >
             <SEO title="Home" />
-            <Image fluid={data.file.childImageSharp.fluid} />
-            <Header>Ville Heikkilä</Header>
+            <Header gridArea="header" placeSelf="center">
+                Ville Heikkilä
+            </Header>
+            <Image
+                gridArea="avatar"
+                placeSelf="center"
+                fluid={data.file.childImageSharp.fluid}
+            />
         </Page>
     );
 };
 
-const Header = styled.h1`
+const Header = styled.h1<GridAreaProps & { placeSelf?: string }>`
     font-weight: 'bold';
+    place-self:  ${(props) => props.placeSelf};
+    ${gridArea}
+
     color: ${(props) => props.theme.colors.black};
 `;
 
-const Image = styled(Img)`
+const Image = styled(Img)<GridAreaProps & { placeSelf?: string }>`
+    ${gridArea}
+    place-self:  ${(props) => props.placeSelf};
+    grid-area: avatar;
     width: 200px;
     height: 200px;
     border-radius: 50%;
