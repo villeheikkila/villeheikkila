@@ -1,18 +1,16 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import React from 'react';
 import Particles from 'react-particles-js';
+import theme from '../theme';
 
 const ParticleBackground = () => {
-    const isBrowser = typeof window !== undefined;
-
-    if (!isBrowser) return null;
-
     return (
         <Particles
+            style={{ zIndex: 1 }}
             params={{
                 particles: {
                     number: {
-                        value: 20,
+                        value: 30,
                         density: {
                             enable: true,
                             value_area: 800,
@@ -24,7 +22,7 @@ const ParticleBackground = () => {
                     shape: {
                         type: 'polygon',
                         polygon: {
-                            nb_sides: 5,
+                            nb_sides: 0,
                         },
                     },
                     opacity: {
@@ -38,7 +36,7 @@ const ParticleBackground = () => {
                         },
                     },
                     size: {
-                        value: 30,
+                        value: 40,
                         random: true,
                         anim: {
                             enable: true,
@@ -49,14 +47,14 @@ const ParticleBackground = () => {
                     },
                     line_linked: {
                         enable: true,
-                        distance: 100,
-                        color: '#ffffff',
-                        opacity: 1,
-                        width: 2,
+                        distance: 300,
+                        color: theme.colors.flame,
+                        opacity: 0.5,
+                        width: 3,
                     },
                     move: {
                         enable: true,
-                        speed: 3,
+                        speed: 1.5,
                         random: true,
                         straight: false,
                         bounce: true,

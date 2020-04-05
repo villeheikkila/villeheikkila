@@ -44,13 +44,15 @@ const Portfolio = () => {
 
     return (
         <Page
-            backgroundColor="snow"
+            backgroundColor="smokyBlack"
             gridTemplateRows=" 200px 1fr"
             gridTemplateColumns="100px 1fr 100px"
             gridTemplateAreas="'. header .' '. projects .'"
         >
             <SEO title="Portfolio" />
-            <Canon gridArea="header">Portfolio</Canon>
+            <Canon gridArea="header" color="white">
+                Portfolio
+            </Canon>
 
             <Box
                 gridArea="projects"

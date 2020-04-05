@@ -16,7 +16,7 @@ const options = {
     renderNode: {
         // eslint-disable-next-line react/display-name
         [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
-            <Body>{children}</Body>
+            <Body color="white">{children}</Body>
         ),
     },
 };
@@ -37,13 +37,15 @@ const About = () => {
 
     return (
         <Page
-            backgroundColor="snow"
+            backgroundColor="smokyBlack"
             gridTemplateRows=" 100px 1fr"
             gridTemplateColumns="100px 1fr 100px"
             gridTemplateAreas="'. header .' '. CV .'"
         >
             <SEO title="About" />
-            <Canon gridArea="header">{header}</Canon>
+            <Canon gridArea="header" color="white">
+                {header}
+            </Canon>
             <Box gridArea="CV">
                 {documentToReactComponents(
                     childContentfulAboutCvRichTextNode.json,

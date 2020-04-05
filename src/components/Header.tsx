@@ -10,7 +10,7 @@ import {
 import { Canon } from './Typography';
 import Box from './Box';
 import Dynamic, { DynamicProps } from './Dynamic';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 
 const Header: React.FC<GridAreaProps | LayoutProps> = ({ ...rest }) => {
     return (
@@ -69,7 +69,7 @@ const NavigationLink = styled(Dynamic)<DynamicProps | { to: string }>`
 const Container = styled.div<GridProps | LayoutProps>`
     ${grid}
     ${layout}
-    background-color: ${(props) => props.theme.colors.midnightBlue};
+    background-color: ${(props) => props.theme.colors.smokyBlack};
     display: grid;
     place-items: center stretch;
     grid-template-areas: ". left . right .";

@@ -9,15 +9,15 @@ import Button from '../components/Button';
 
 const Contact = () => (
     <Page
-        backgroundColor="snow"
+        backgroundColor="smokyBlack"
         gridTemplateRows=" 200px 1fr"
         gridTemplateColumns="100px 1fr 100px"
         gridTemplateAreas="'. header .' '. contact .'"
     >
         <SEO title="Contact" />
         <Box gridArea="header">
-            <Canon>Contact</Canon>
-            <Body>Say hello!</Body>
+            <Canon color="white">Contact</Canon>
+            <Body color="white">Say hello!</Body>
         </Box>
 
         <Form
@@ -32,13 +32,19 @@ const Contact = () => (
             netlify-honeypot="bot-field"
         >
             <input type="hidden" name="form-name" value="contact" />
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name" color="white">
+                Name
+            </Label>
             <Input id="name" name="name" type="text" />
 
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" color="white">
+                Email
+            </Label>
             <Input id="email" name="email" type="email" />
 
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message" color="white">
+                Message
+            </Label>
             <TextArea id="message" name="message" height="200px" />
             <Button type="submit">Send</Button>
         </Form>

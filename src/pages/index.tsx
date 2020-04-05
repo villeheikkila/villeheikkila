@@ -5,22 +5,52 @@ import SEO from '../components/seo';
 import { Canon } from '../components/Typography';
 import Box from '../components/Box';
 import ParticleBackground from '../components/ParticleBackground';
+import Typed from 'react-typed';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const Index = () => {
-    const isBrowser = typeof window !== undefined;
+    const {
+        contentfulIndexTypedStringsJsonNode: { typed },
+    } = useStaticQuery(graphql`
+        query Typed {
+            contentfulIndexTypedStringsJsonNode {
+                typed
+            }
+        }
+    `);
 
     return (
         <Page
             gridTemplateRows="100px 200px 1fr"
             gridTemplateColumns="50px 1fr 1fr"
-            gridTemplateAreas="'. . .' 'banner banner banner' '. header .'"
-            backgroundColor="midnightBlue"
+            gridTemplateAreas="'. . .' 'banner banner banner' '. . .'"
+            backgroundColor="smokyBlack"
         >
             <SEO title="Home" />
-            <Canon gridArea="header" color="white">
-                Web Developer
-            </Canon>
-            <Box gridArea="banner">{isBrowser && <ParticleBackground />}</Box>
+
+            <Box gridArea="banner" position="relative">
+                <ParticleBackground />
+
+                <Canon
+                    gridArea="header"
+                    color="white"
+                    position="absolute"
+                    top="40%"
+                    left="50px"
+                >
+                    <Typed
+                        loop
+                        typeSpeed={70}
+                        backSpeed={20}
+                        strings={typed}
+                        smartBackspace
+                        backDelay={1000}
+                        loopCount={0}
+                        showCursor
+                        cursorChar="|"
+                    />
+                </Canon>
+            </Box>
         </Page>
     );
 };

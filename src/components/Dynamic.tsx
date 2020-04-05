@@ -32,6 +32,8 @@ import {
     FlexboxProps,
     layout,
     LayoutProps,
+    position,
+    PositionProps,
 } from 'styled-system';
 
 export type DynamicProps =
@@ -51,7 +53,8 @@ export type DynamicProps =
     | FlexboxProps
     | ColorProps
     | TextTransformProps
-    | LayoutProps;
+    | LayoutProps
+    | PositionProps;
 
 const StyledComponent = styled.div`
     ${space}
@@ -70,6 +73,7 @@ const StyledComponent = styled.div`
     ${textTransform}
     ${color}
     ${layout}
+    ${position}
 `;
 
 const Dynamic: React.FC<DynamicProps & { tag: string | ReactNode }> = ({
