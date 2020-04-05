@@ -22,7 +22,8 @@ const Index = () => {
     return (
         <Page
             gridTemplateRows="100px 200px 1fr"
-            gridTemplateColumns="50px 1fr 1fr"
+            gridTemplateColumns="5vw 1fr 5vw"
+            gridGap="20px"
             gridTemplateAreas="'. . .' 'banner banner banner' '. . .'"
             backgroundColor="smokyBlack"
         >

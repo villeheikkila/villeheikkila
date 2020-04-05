@@ -10,8 +10,9 @@ import Button from '../components/Button';
 const Contact = () => (
     <Page
         backgroundColor="smokyBlack"
-        gridTemplateRows=" 200px 1fr"
-        gridTemplateColumns="100px 1fr 100px"
+        gridTemplateRows=" 100px 1fr"
+        gridTemplateColumns="5vw 1fr 5vw"
+        gridGap="20px"
         gridTemplateAreas="'. header .' '. contact .'"
     >
         <SEO title="Contact" />

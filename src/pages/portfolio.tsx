@@ -16,7 +16,7 @@ const Portfolio = () => {
     const {
         github: {
             viewer: {
-                repositories: { nodes: repositories },
+                repositories: { nodes },
             },
         },
     } = useStaticQuery(
@@ -42,11 +42,17 @@ const Portfolio = () => {
         `,
     );
 
+    // Filter out repositories with short or no description
+    const repositories = nodes.filter(
+        (e: Project) => !(e?.description === null || e?.description.length < 5),
+    );
+
     return (
         <Page
             backgroundColor="smokyBlack"
-            gridTemplateRows=" 200px 1fr"
-            gridTemplateColumns="100px 1fr 100px"
+            gridTemplateRows=" 100px 1fr"
+            gridTemplateColumns="5vw 1fr 5vw"
+            gridGap="20px"
             gridTemplateAreas="'. header .' '. projects .'"
         >
             <SEO title="Portfolio" />
@@ -63,7 +69,6 @@ const Portfolio = () => {
             >
                 {repositories.map((project: Project) => (
                     <GitHubCard
-                        width="400px"
                         height="200px"
                         key={project.name}
                         {...project}
