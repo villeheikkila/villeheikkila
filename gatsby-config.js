@@ -1,3 +1,7 @@
+require('dotenv').config({
+    path: `.env`,
+});
+
 module.exports = {
     siteMetadata: {
         title: `Ville Heikkila's developer portfolio`,
@@ -7,13 +11,6 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `images`,
-                path: `${__dirname}/src/images`,
-            },
-        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
@@ -25,6 +22,14 @@ module.exports = {
                 background_color: `#282a36`,
                 theme_color: `#663399`,
                 display: `standalone`,
+            },
+        },
+        {
+            resolve: `gatsby-source-contentful`,
+            options: {
+                spaceId: process.env.CONTENTFUL_SPACE_ID,
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+                downloadLocal: true,
             },
         },
         `gatsby-plugin-typescript`,
