@@ -8,12 +8,23 @@ import {
     layout,
 } from 'styled-system';
 import { Body } from './Typography';
+import { useStaticQuery, graphql } from 'gatsby';
 
-const Footer: React.FC<GridAreaProps | LayoutProps> = ({ ...rest }) => (
-    <Container color="white" {...rest}>
-        <Body>© 2020 Ville Heikkilä – Software Developer at Taito United</Body>
-    </Container>
-);
+const Footer: React.FC<GridAreaProps | LayoutProps> = ({ ...rest }) => {
+    const { contentfulFooter } = useStaticQuery(graphql`
+        query FooterQuery {
+            contentfulFooter(node_locale: { eq: "fi" }) {
+                copyright
+            }
+        }
+    `);
+
+    return (
+        <Container color="white" {...rest}>
+            <Body>{contentfulFooter.copyright}</Body>
+        </Container>
+    );
+};
 
 const Container = styled.div<GridProps | LayoutProps>`
     ${grid}

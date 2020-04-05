@@ -10,35 +10,37 @@ import {
 import { Canon } from './Typography';
 import Box from './Box';
 import Dynamic, { DynamicProps } from './Dynamic';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
-const Header: React.FC<GridAreaProps | LayoutProps> = ({ ...rest }) => (
-    <Container {...rest}>
-        <Box gridArea="left">
-            <NavigationLink tag={Link} display="flex" to="/">
-                <Canon color="snow" paddingRight="10px">
-                    Ville
-                </Canon>
+const Header: React.FC<GridAreaProps | LayoutProps> = ({ ...rest }) => {
+    return (
+        <Container {...rest}>
+            <Box gridArea="left">
+                <NavigationLink tag={Link} display="flex" to="/">
+                    <Canon color="snow" paddingRight="10px">
+                        Ville
+                    </Canon>
 
-                <CanonOnHover color="snow">Heikkilä</CanonOnHover>
-            </NavigationLink>
-        </Box>
+                    <CanonOnHover color="snow">Heikkilä</CanonOnHover>
+                </NavigationLink>
+            </Box>
 
-        <Box gridArea="right">
-            <NavigationLink tag={Link} to="/about">
-                About
-            </NavigationLink>
+            <Box gridArea="right">
+                <NavigationLink tag={Link} to="/about">
+                    About
+                </NavigationLink>
 
-            <NavigationLink tag={Link} to="/portfolio">
-                Portfolio
-            </NavigationLink>
+                <NavigationLink tag={Link} to="/portfolio">
+                    Portfolio
+                </NavigationLink>
 
-            <NavigationLink tag={Link} to="/contact">
-                Contact
-            </NavigationLink>
-        </Box>
-    </Container>
-);
+                <NavigationLink tag={Link} to="/contact">
+                    Contact
+                </NavigationLink>
+            </Box>
+        </Container>
+    );
+};
 
 const CanonOnHover = styled(Canon)<DynamicProps>`
     :hover {

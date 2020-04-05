@@ -1,21 +1,34 @@
 import React from 'react';
 import Page from '../components/Page';
 import SEO from '../components/seo';
-import styled from 'styled-components';
-import { gridArea, GridAreaProps } from 'styled-system';
-import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Canon } from '../components/Typography';
+import { Canon, Body } from '../components/Typography';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Box from '../components/Box';
+
+const options = {
+    renderMark: {
+        // eslint-disable-next-line react/display-name
+        [MARKS.BOLD]: (text: string) => <Body fontWeight="bold">{text}</Body>,
+    },
+    renderNode: {
+        // eslint-disable-next-line react/display-name
+        [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
+            <Body>{children}</Body>
+        ),
+    },
+};
 
 const About = () => {
-    const data = useStaticQuery(graphql`
-        query {
-            file(relativePath: { eq: "avatar.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 200, quality: 100) {
-                        ...GatsbyImageSharpFluid
-                    }
+    const { contentfulAbout } = useStaticQuery(graphql`
+        query MyQuery {
+            contentfulAbout(node_locale: { eq: "fi" }) {
+                childContentfulAboutCvRichTextNode {
+                    json
                 }
+                header
             }
         }
     `);
@@ -23,25 +36,20 @@ const About = () => {
     return (
         <Page
             backgroundColor="snow"
-            gridTemplateRows=" 100px 200px 1fr"
-            gridTemplateColumns="100px 1fr 1fr"
-            gridTemplateAreas="'. header .' '. avatar  .' '. . .'"
+            gridTemplateRows=" 100px 1fr"
+            gridTemplateColumns="100px 1fr 100px"
+            gridTemplateAreas="'. header .' '. CV .'"
         >
             <SEO title="About" />
-            <Canon gridArea="header">About</Canon>
-
-            <Image gridArea="avatar" fluid={data.file.childImageSharp.fluid} />
+            <Canon gridArea="header">{contentfulAbout.header}</Canon>
+            <Box gridArea="CV">
+                {documentToReactComponents(
+                    contentfulAbout.childContentfulAboutCvRichTextNode.json,
+                    options as any,
+                )}
+            </Box>
         </Page>
     );
 };
-
-const Image = styled(Img)<GridAreaProps & { placeSelf?: string }>`
-    ${gridArea}
-    place-self:  ${(props) => props.placeSelf};
-    grid-area: avatar;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-`;
 
 export default About;
