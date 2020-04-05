@@ -38,7 +38,7 @@ const About = () => {
     return (
         <Page
             backgroundColor="smokyBlack"
-            gridTemplateRows=" 8vw 1fr"
+            gridTemplateRows="100px 1fr"
             gridTemplateColumns="5vw 1fr 5vw"
             gridTemplateAreas="'. header .' '. CV .'"
         >

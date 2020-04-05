@@ -17,11 +17,11 @@ const Header: React.FC<GridAreaProps | LayoutProps> = ({ ...rest }) => {
         <Container {...rest}>
             <Box gridArea="left">
                 <NavigationLink tag={Link} display="flex" to="/">
-                    <Canon color="snow" paddingRight="10px">
+                    <CanonOnHover color="white" paddingRight="10px">
                         Ville
-                    </Canon>
+                    </CanonOnHover>
 
-                    <CanonOnHover color="snow">Heikkilä</CanonOnHover>
+                    <CanonOnHover color="white">Heikkilä</CanonOnHover>
                 </NavigationLink>
             </Box>
 
