@@ -46,5 +46,6 @@ module.exports = {
         `gatsby-plugin-typescript`,
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-anchor-links`,
+        'gatsby-plugin-layout',
     ],
 };

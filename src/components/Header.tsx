@@ -74,6 +74,10 @@ const Container = styled.div<GridProps | LayoutProps>`
     place-items: center stretch;
     grid-template-areas: ". left . right .";
     grid-template-columns: 30px auto 1fr auto 30px;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100px;
 `;
 
 export default Header;

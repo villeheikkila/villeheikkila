@@ -1,37 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { grid, GridProps, color, BackgroundColorProps } from 'styled-system';
-import Footer from './Footer';
-import Header from './Header';
 
 const Page: React.FC<GridProps | BackgroundColorProps> = ({
     children,
     ...rest
-}) => (
-    <Container
-        gridTemplateAreas="'header' 'content' 'footer'"
-        gridTemplateColumns="1fr"
-        gridTemplateRows="100px 1fr 100px"
-    >
-        <Header gridArea="header" width="100%" height="100px" />
-        <Content gridArea="content" {...rest}>
-            {children}
-        </Content>
-        <Footer gridArea="footer" width="100%" height="100px" />
-    </Container>
-);
+}) => <Container {...rest}>{children}</Container>;
 
-const Container = styled.div<GridProps>`
-    ${grid}
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-`;
-
-const Content = styled.div<GridProps | BackgroundColorProps>`
+const Container = styled.div<GridProps | BackgroundColorProps>`
     ${grid}
     ${color}
     display: grid;
+    width: 100vw;
+    height: 100vh - 100px;
+    padding-top: 100px;
 `;
 
 export default Page;
