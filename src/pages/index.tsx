@@ -1,29 +1,26 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import React from 'react';
 import Page from '../components/Page';
 import SEO from '../components/seo';
-import { Canon, Label } from '../components/Typography';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Canon } from '../components/Typography';
+import Box from '../components/Box';
+import ParticleBackground from '../components/ParticleBackground';
 
 const Index = () => {
-    const data = useStaticQuery(graphql`
-        query a {
-            contentfulAbout {
-                childContentfulAboutCvRichTextNode {
-                    json
-                }
-            }
-        }
-    `);
+    const isBrowser = typeof window !== undefined;
 
     return (
         <Page
             gridTemplateRows="100px 200px 1fr"
             gridTemplateColumns="50px 1fr 1fr"
-            gridTemplateAreas="'. . .' '. header .' '. . .'"
+            gridTemplateAreas="'. . .' 'banner banner banner' '. header .'"
             backgroundColor="midnightBlue"
         >
             <SEO title="Home" />
-            <Canon gridArea="header">Yo!</Canon>
+            <Canon gridArea="header" color="white">
+                Web Developer
+            </Canon>
+            <Box gridArea="banner">{isBrowser && <ParticleBackground />}</Box>
         </Page>
     );
 };
