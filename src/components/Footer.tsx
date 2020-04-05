@@ -13,7 +13,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 const Footer: React.FC<GridAreaProps | LayoutProps> = ({ ...rest }) => {
     const { contentfulFooter } = useStaticQuery(graphql`
         query FooterQuery {
-            contentfulFooter(node_locale: { eq: "fi" }) {
+            contentfulFooter(node_locale: { eq: "en-US" }) {
                 copyright
             }
         }

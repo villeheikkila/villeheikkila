@@ -24,7 +24,7 @@ const options = {
 const About = () => {
     const { contentfulAbout } = useStaticQuery(graphql`
         query MyQuery {
-            contentfulAbout(node_locale: { eq: "fi" }) {
+            contentfulAbout(node_locale: { eq: "en-US" }) {
                 childContentfulAboutCvRichTextNode {
                     json
                 }

@@ -32,4 +32,5 @@ export default {
     },
     fontSizes: [12, 13, 14, 15, 16, 18, 20, 21, 22, 24, 26, 28, 32, 36, 52],
     breakpoints: ['320px', '600px'],
+    borderRadius: '4px',
 };

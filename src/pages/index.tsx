@@ -1,7 +1,7 @@
 import React from 'react';
 import Page from '../components/Page';
 import SEO from '../components/seo';
-import { Canon } from '../components/Typography';
+import { Canon, Label } from '../components/Typography';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const Index = () => {
