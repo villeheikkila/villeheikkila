@@ -1,4 +1,4 @@
-import React, { LabelHTMLAttributes } from 'react';
+import React from 'react';
 import Dynamic, { DynamicProps } from './Dynamic';
 import theme from '../theme';
 const { canon, trafalgar, body } = theme.typography;

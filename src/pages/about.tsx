@@ -22,7 +22,9 @@ const options = {
 };
 
 const About = () => {
-    const { contentfulAbout } = useStaticQuery(graphql`
+    const {
+        contentfulAbout: { header, childContentfulAboutCvRichTextNode },
+    } = useStaticQuery(graphql`
         query MyQuery {
             contentfulAbout(node_locale: { eq: "en-US" }) {
                 childContentfulAboutCvRichTextNode {
@@ -41,10 +43,10 @@ const About = () => {
             gridTemplateAreas="'. header .' '. CV .'"
         >
             <SEO title="About" />
-            <Canon gridArea="header">{contentfulAbout.header}</Canon>
+            <Canon gridArea="header">{header}</Canon>
             <Box gridArea="CV">
                 {documentToReactComponents(
-                    contentfulAbout.childContentfulAboutCvRichTextNode.json,
+                    childContentfulAboutCvRichTextNode.json,
                     options as any,
                 )}
             </Box>

@@ -11,7 +11,9 @@ import { Body } from './Typography';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const Footer: React.FC<GridAreaProps | LayoutProps> = ({ ...rest }) => {
-    const { contentfulFooter } = useStaticQuery(graphql`
+    const {
+        contentfulFooter: { copyright },
+    } = useStaticQuery(graphql`
         query FooterQuery {
             contentfulFooter(node_locale: { eq: "en-US" }) {
                 copyright
@@ -21,7 +23,7 @@ const Footer: React.FC<GridAreaProps | LayoutProps> = ({ ...rest }) => {
 
     return (
         <Container color="white" {...rest}>
-            <Body>{contentfulFooter.copyright}</Body>
+            <Body>{copyright}</Body>
         </Container>
     );
 };

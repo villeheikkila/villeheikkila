@@ -32,6 +32,17 @@ module.exports = {
                 downloadLocal: true,
             },
         },
+        {
+            resolve: 'gatsby-source-graphql',
+            options: {
+                typeName: 'GitHub',
+                fieldName: 'github',
+                url: 'https://api.github.com/graphql',
+                headers: {
+                    Authorization: `bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
+                },
+            },
+        },
         `gatsby-plugin-typescript`,
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-anchor-links`,

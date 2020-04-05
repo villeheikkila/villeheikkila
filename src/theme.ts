@@ -18,7 +18,7 @@ export default {
         },
         trafalgar: {
             tag: 'h1',
-            fontSize: [6, 9, 12],
+            fontSize: [5, 7, 9],
             lineHeight: ['24px', '28px', '40px'],
             fontWeight: 500,
             fontFamily: "'Open Sans', sans-serif",
