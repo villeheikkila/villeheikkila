@@ -56,7 +56,6 @@ const Portfolio = () => {
                 gridArea="projects"
                 display="grid"
                 gridGap="10px"
-                placeItems="center"
                 gridTemplateColumns="repeat(auto-fit, minmax(420px, 1fr))"
                 gridTemplateRows="repeat(auto-fit, minmax(225px, 1fr))"
             >

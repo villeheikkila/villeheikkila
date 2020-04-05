@@ -3,8 +3,9 @@ import Page from '../components/Page';
 import SEO from '../components/seo';
 import { Canon, Label } from '../components/Typography';
 import { Body } from '../components/Typography';
-import Box from '../components/Box';
+import Box, { Form } from '../components/Box';
 import Input, { TextArea } from '../components/Input';
+import Button from '../components/Button';
 
 const Contact = () => (
     <Page
@@ -19,23 +20,28 @@ const Contact = () => (
             <Body>Say hello!</Body>
         </Box>
 
-        <Box
+        <Form
             gridArea="contact"
             display="grid"
             gridAutoFlow="row dense"
             gridGap="10px"
             width="400px"
             height="200px"
+            name="contact-form"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
         >
+            <input type="hidden" name="form-name" value="contact" />
             <Label htmlFor="name">Name</Label>
-            <Input id="name" type="text" />
+            <Input id="name" name="name" type="text" />
 
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="text" />
+            <Input id="email" name="email" type="email" />
 
-            <Label htmlFor="contact">Message</Label>
-            <TextArea id="contact" height="200px" />
-        </Box>
+            <Label htmlFor="message">Message</Label>
+            <TextArea id="message" name="message" height="200px" />
+            <Button type="submit">Send</Button>
+        </Form>
     </Page>
 );
 

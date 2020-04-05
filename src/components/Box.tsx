@@ -23,4 +23,10 @@ const Container = styled.div<BoxProps>`
     ${layout}
 `;
 
+export const Form = styled.form<BoxProps>`
+    ${grid}
+    ${flexbox}
+    ${layout}
+`;
+
 export default Box;
