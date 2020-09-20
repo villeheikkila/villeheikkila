@@ -1,4 +1,3 @@
-<h2 align="center">
-  A software developer with keen interest in computer science and technology.
-</h2>
-
+<h3 align="center">
+  🚀 Software developer with keen interest in computer science and technology 🚀
+</h3>
