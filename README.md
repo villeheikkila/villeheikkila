@@ -1,3 +1,4 @@
-<h1 align="center">
-  My portfolio
-</h1>
+<h2 align="center">
+  A software developer with keen interest in computer science and technology.
+</h2>
+
