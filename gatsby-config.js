@@ -43,6 +43,12 @@ module.exports = {
                 },
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/src/assets`,
+            },
+        },
         `gatsby-plugin-typescript`,
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-anchor-links`,

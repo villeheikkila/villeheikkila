@@ -70,3 +70,5 @@ yarn-error.log
 
 # Lets keep these out for now
 yarn.lock
+.cache/
+public/
