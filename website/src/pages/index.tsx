@@ -1,5 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { BLOCKS } from '@contentful/rich-text-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
@@ -7,10 +7,6 @@ import SEO from '../components/seo';
 import Img from 'gatsby-image';
 
 const options = {
-    renderMark: {
-        // eslint-disable-next-line react/display-name
-        [MARKS.BOLD]: (text: string) => <p>{text}</p>,
-    },
     renderNode: {
         // eslint-disable-next-line react/display-name
         [BLOCKS.PARAGRAPH]: (node: any, children: any) => <p>{children}</p>,
@@ -35,7 +31,7 @@ const Index = () => {
             </Card>
             {documentToReactComponents(
                 data.contentfulAbout.childContentfulAboutCvRichTextNode.json,
-                options as any,
+                options,
             )}
             <div style={{ height: '300px' }} />
         </>
