@@ -10,7 +10,6 @@ Hi, I'm Ville Heikkilä, a software developer and computer science student from 
 
 -   ...working as a software developer at the [Taito United](https://www.taitounited.fi).
 -   ...finishing up my bachelor's studies at the [University of Helsinki](https://www.helsinki.fi/en).
--   ...working on the [Tastekeeper](https://github.com/villeheikkila/tastekeeper) app.
 -   ...active at [TKO-äly ry](https://www.tko-aly.fi).
 
 ### Technologies I like to use
