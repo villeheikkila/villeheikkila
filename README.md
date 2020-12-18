@@ -6,12 +6,6 @@
 
 Hi, I'm Ville Heikkilä, a software developer and computer science student from the University of Helsinki. I like to constantly learn new things and find better ways to solve real problems. As software developer, I like to challenge myself with new technologies, practices and patterns and hone my craft. I strive to be a generalist with good understanding on the entire stack from the databases to the frontend without forgetting the design, testing and deployment. As a computer science student, I want to deepen my understanding on the low-level details about programming and operating systems. I'm not satisfied with things just working, I want to know why and how they work.
 
-### Currently I am...
-
--   ...working as a software developer at the [Taito United](https://www.taitounited.fi).
--   ...finishing up my bachelor's studies at the [University of Helsinki](https://www.helsinki.fi/en).
--   ...active at [TKO-äly ry](https://www.tko-aly.fi).
-
 ### Technologies I like to use
 
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"></code>
