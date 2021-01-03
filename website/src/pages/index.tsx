@@ -20,15 +20,11 @@ const Index = () => {
     return (
         <>
             <SEO title="Home" />
-            <Card>
-                <Heading>
-                    <Image
-                        fixed={data.image.childImageSharp.fixed}
-                        alt="A corgi smiling happily"
-                    />
-                    <h1>Hi! I&apos;m Ville!</h1>
-                </Heading>
-            </Card>
+            <Heading>
+                <h1>Hey I&apos;m Ville! :)</h1>
+                <h1>Software developer, techn enthusiast!</h1>
+            </Heading>
+
             {documentToReactComponents(
                 data.contentfulAbout.childContentfulAboutCvRichTextNode.json,
                 options,

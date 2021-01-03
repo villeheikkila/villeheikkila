@@ -24,4 +24,19 @@ export const theme = {
         bold: '700',
         extrabold: '800',
     },
+    spacing: {
+        sm: '2px',
+        base: '8px',
+        lg: '16px',
+        xl: '32px',
+    },
+    font: {
+        sans: 'Courier, sans-serif',
+        serif: 'Courier, sans',
+        monospace: '"Courier New", monospace',
+    },
+    lineHeight: {
+        normal: 1,
+        medium: 1.2,
+    },
 };
